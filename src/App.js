@@ -1,11 +1,11 @@
-import logo from './assets/images/logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import routes from './routes';
+import { GlobalProvider } from './context/Provider';
 
 function App() {
   return (
-    <div className="App">
+    <GlobalProvider>
       <Router>
         <Switch>
           {routes.map((route, index) => (
@@ -18,7 +18,7 @@ function App() {
           ))}
         </Switch>
       </Router>
-    </div>
+    </GlobalProvider>
   );
 }
 
